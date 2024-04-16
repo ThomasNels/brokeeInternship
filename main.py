@@ -20,15 +20,18 @@ def cover_letter_eval(path, position):
     cover_letter = pipeline('document-question-answering')
     if position == "ai":
         for q in ["What past experience with artifical intelligence does this canditate have?", "What projects has this canditate worked on related to artificial intelligence?", "What has the canditate done in a team environment?"]:
-            print(cover_letter(path, q))
+            print(q)
+            print(cover_letter(path, q)["answer"])
             
     elif position == "devops":
         for q in ["What past experience with devops does this canditate have?", "What projects has this canditate worked on related to devops?", "What has the canditate done in a team environment?"]:
-            print(cover_letter(path, q))
+            print(q)
+            print(cover_letter(path, q)["answer"])
     
     elif position == "frontend":
         for q in ["What past experience with frontend development does this canditate have?", "What projects has this canditate worked on related to frontend development?", "What has the canditate done in a team environment?"]:
-            print(cover_letter(path, q))
+            print(q)
+            print(cover_letter(path, q)["answer"])
     
     else:
         print("Invalid position, make sure you entered lowercase: ai, devops, or frontend.")
