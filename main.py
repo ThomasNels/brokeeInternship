@@ -3,6 +3,8 @@
 # an average to find the highest score. Closer to 1 means a better cover letter, further means a worse cover letter.
 #
 
+import subprocess
+subprocess.check_call(["pip", "install", "-q", "-r", "requirements.txt"])
 from transformers import pipeline
 import sys
 
